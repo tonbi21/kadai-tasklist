@@ -15,6 +15,7 @@
         </div>
         <div class="card-body">
           <h5 class="card-title">{{ $task->content }}</h5>
+          <p class="card-text badge badge-pill badge-info">{{ $task->status }}</p>
         </div>
     </div>
 @endforeach
