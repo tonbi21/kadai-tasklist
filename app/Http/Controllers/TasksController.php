@@ -86,7 +86,7 @@ class TasksController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-            'content' => 'required|max:100',
+            'content' => 'required|max:255',
             'status'=> 'required|max:10'
         ]);
 
