@@ -28,7 +28,7 @@
             
             {!! Form::close() !!}
             
-            <p class="mt-5">Already signed up <a href="#">Log in</a></p>
+            <p class="mt-5">Already signed up? {!! link_to_route('login', 'Login', [], ['class' => 'ml-3'])!!}</p>
         
         </div>
         
