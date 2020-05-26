@@ -12,6 +12,8 @@
     @include('common.navbar')
     
     <div class="container">
+        <!--エラーメッセージ-->
+        @include('common.error_messages')
         <!--各ページの本文-->
         @yield('content')
     </div>

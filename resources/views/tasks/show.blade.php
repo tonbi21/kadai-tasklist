@@ -11,10 +11,18 @@
          <h5 class="card-title">{{ $task->content }}</h5>
          <p class="card-text badge badge-pill badge-info">{{ $task->status }}</p>
          <div class= 'buttons' style="float: right;">
-             {!! link_to_route('tasks.edit', "Edit", [$task->id], ['class' => 'btn btn-warning', 'style' => 'margin-bottom:10px;']) !!}
-             {!! Form::model($task, ['route' => ['tasks.destroy', $task->id], 'method' => 'delete']) !!}
-                {!! Form::submit('Delete', ['class' => 'btn btn-danger']) !!}
-             {!! Form::close() !!}
+             
+             
+             <!--ログインユーザーと投稿したユーザーのIDが同じなら表示-->
+             @if(Auth::id() == $task->user_id)
+                 {!! link_to_route('tasks.edit', "Edit", [$task->id], ['class' => 'btn btn-warning', 'style' => 'margin-bottom:10px;']) !!}
+                 {!! Form::model($task, ['route' => ['tasks.destroy', $task->id], 'method' => 'delete']) !!}
+                    {!! Form::submit('Delete', ['class' => 'btn btn-danger']) !!}
+                 {!! Form::close() !!}
+            @endif
+             
+             
+             
          </div>
     </div>
 </div>
